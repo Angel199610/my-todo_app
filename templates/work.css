@@ -1,0 +1,72 @@
+body {
+    background-image: url(../statics/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+  
+p {
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.myform {
+  display: flex;
+  flex-direction: column;
+}
+
+.Inbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inputBox input [type="text"] {
+  flex: 1;
+  padding: 13px 20px;
+  border: 2px solid rgb(216, 43, 13);
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.inputBox input [type="submit"] {
+  padding: 12px 20px;
+  background-color: rgb(14, 13, 13);
+  color: rgb(218, 15, 15);
+  border: 1px solid blue;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+
+}
+
+.Inbox input [type="text"]:hover {
+  background-color: rgb(236, 14, 14);
+} 
+
+/* Input focus styling */
+.inputBox input[type="text"]:focus,
+.inputBox input[type="submit"]:focus {
+outline: none;
+box-shadow: 0 0 5px #007bff;
+}
+
+/* Responsive styling */
+@media (max-width: 480px) {
+.container {
+  max-width: 100%;
+  border-radius: 0;
+  border: none;
+}
+}

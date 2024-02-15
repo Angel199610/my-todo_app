@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head class="intro-header" style="background-image:url('static/1.jpg')">
+<body style="background-image: url(../statics/1.jpg);">
+    <style>
+      body {
+        background-color: rgb(31, 2, 44);
+      }
+        
+        .container {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid white;
+          border-radius: 10px;
+          background-color: aliceblue;
+      }
+          
+      p {
+          font-size: 20px;
+          font-weight: bolder;
+          text-align: center;
+          color: black;
+          margin-bottom: 20px;
+      }
+      
+      .myform {
+          display: flex;
+          flex-direction: column;
+      }
+      
+      .inputBox {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+      }
+      
+      .inputBox input [type="text"] {
+          flex: 1;
+          padding: 13px 20px;
+          border: 2px solid rgb(216, 43, 13);
+          border-radius: 5px 0 0 5px;
+          font-size: 20px;
+          padding-left: 10px;
+      }
+      
+      .inputBox button [type="submit"] {
+          padding: 12px 20px;
+          background-color: rgb(14, 13, 13);
+          color: rgb(218, 15, 15);
+          border: 1px solid blue;
+          border-radius: 0 5px 5px 0;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+      
+      }
+      
+      .inbox input [type="text"]:hover {
+          background-color: rgb(236, 14, 14);
+      } 
+      
+      /* Input focus styling */
+      .inputBox input[type="text"]:focus,
+      .inputBox input[type="submit"]:focus {
+        outline: none;
+        box-shadow: 0 0 5px #007bff;
+      }
+      
+      /* Responsive styling */
+      @media (max-width: 480px) {
+        .container {
+          max-width: 100%;
+          border-radius: 0;
+          border: none;
+        }
+      }
+      .heading {
+        margin-left: 400px;
+      }
+      </style>
+    
+    
+    <div class="heading">
+        <img src="../static/mobile-phone-with-check-list-screen_107791-17377-removebg-preview.png" alt="image" width="20%" height="20%">
+
+    </div>
+        <div class="container">
+          <p style="color: black">TODO APPLICATION</p>
+          <form class="myform">
+              <div class="Inbox">
+              <input type="text" name="task" placeholder="Add new task" required>
+              <input style="color: purple; font-size: larger;"  type="submit" value="create"> 
+              </div>
+              
+            </form>
+      
+            <ul type="color: white smoke " id="tasklist">
+              {% for task in tasks %}
+      
+              <li>
+                  {{ task }}
+                  <form action="{{url_for('delete_task', task_id=loop.index0)}}" method="post" style="display: inline;">
+                    <button style="color: purple" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
+                  </form>
+                </li>
+                {% endfor %}
+                
+            </ul> 
+      
+        </div>
+        
+</body>
+</html>
